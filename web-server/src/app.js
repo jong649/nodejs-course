@@ -47,6 +47,22 @@ app.get("/weather", (req, res) => {
   });
 });
 
+app.get("/help/*", (req, res) => {
+  res.render("error404", {
+    title: "404",
+    message: "Help article not found",
+    name: "Jon Grant",
+  });
+});
+
+app.get("*", (req, res) => {
+  res.render("error404", {
+    title: "404",
+    message: "Page not found",
+    name: "Jon Grant",
+  });
+});
+
 app.listen(3000, () => {
   console.log("Server is up on port 3000");
 });
