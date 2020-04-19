@@ -1,9 +1,16 @@
 body {
   color: #333333;
+  display: flex;
+  flex-direction: column;
   font-family: arial;
   max-width: 650px;
   margin: 0 auto;
+  min-height: 100vh;
   padding: 0 16px;
+}
+
+.main-content {
+  flex-grow: 1;
 }
 
 footer {
@@ -27,4 +34,8 @@ header a {
 h1 {
   font-size: 64px;
   margin-bottom: 16px;
+}
+
+.portrait {
+  width: 250px;
 }
