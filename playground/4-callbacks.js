@@ -1,34 +1,13 @@
-// setTimeout(() => {
-//   console.log("Two seconds are up");
-// }, 2000);
-
-// const names = ["Jon", "Tatyana", "Bill"];
-// const shortNames = names.filter((name) => {
-//   return name.length <= 4;
-// });
-
-// const geocode = (address, callback) => {
-//   setTimeout(() => {
-//     const data = {
-//       latitude: 0,
-//       longitude: 0,
-//     };
-
-//     callback(data);
-//   }, 2000);
-// };
-
-// geocode("Sacramento", (data) => {
-//   console.log(data);
-// });
-
-const add = (a, b, callback) => {
+const doWorkCallback = (callback) => {
   setTimeout(() => {
-    const sum = a + b;
-    callback(sum);
+    callback(undefined, [1, 4, 7]);
   }, 2000);
 };
 
-add(1, 4, (sum) => {
-  console.log(sum);
+doWorkCallback((error, result) => {
+  if (error) {
+    return console.log(error);
+  }
+
+  console.log(result);
 });
